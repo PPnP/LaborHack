@@ -19,15 +19,15 @@ manager.add_command('db', MigrateCommand)
 login_manager = LoginManager(application)
 login_manager.login_message_category = 'info'
 login_manager.login_message = 'Данный раздел требует авторизации.</br>Пожалуйста, войдите или зарегистрируйтесь.'
-login_manager.login_view = 'api.Login'
+login_manager.login_view = ''  # fill it
 
 mail = Mail(application)
 
 
 def asynchronous(f):
     def wrapper(*args, **kwargs):
-        thr = Thread(target=f, args=args, kwargs=kwargs)
-        thr.start()
+        thread = Thread(target=f, args=args, kwargs=kwargs)
+        thread.start()
     return wrapper
 
 
