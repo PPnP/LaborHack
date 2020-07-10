@@ -3,14 +3,14 @@ from flask_wtf import FlaskForm
 from flask_login import current_user
 
 from app.api.controllers.form import FormController
-from app.api.forms.profile import AddPortfolioForm
+from app.api.forms.profile import ProfileForm
 
 
 class ProfileController(FormController):
     action = '/profile'
 
     def get_form(self) -> FlaskForm:
-        return AddPortfolioForm()
+        return ProfileForm()
 
     def get(self):
         user = None
