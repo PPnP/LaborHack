@@ -6,6 +6,10 @@ CSRF_ENABLED = True
 WTF_CSRF_ENABLED = True
 SECRET_KEY = 'nc298r8293rcy29nc92n3y8r29n9ca10cnq'
 
+# API configs
+
+yandex_api_key = 'ce89209d-a0f7-41ce-bde7-26d2aeab3269'
+
 # email server config
 
 MAIL_SERVER = ''  # fill it
