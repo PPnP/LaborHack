@@ -340,7 +340,8 @@ button {
     justify-content: center;
     align-items: center;
     margin-right: 1rem;
-    filter: grayscale(1) opacity(.5)
+    filter: grayscale(1) opacity(.5);
+    flex-shrink: 0;
 }
 
 .back-button_on {
