@@ -113,10 +113,16 @@ input::placeholder {
 /* Locations */
 
 .locations {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 92vh;
+    width: 95vw;
     display: grid;
     grid-template-columns: 22% auto;
     grid-gap: 1.5rem;
-    padding: 2rem;
+    grid-auto-rows: 100%;
 }
 
 .sidebar {
@@ -198,13 +204,11 @@ input::placeholder {
 
 .panel {
     display: grid;
-    transform: translateZ(0);
     grid-gap: 1.5rem;
-    grid-auto-rows: minmax(min-content, max-content);
+    grid-template-rows: 2rem auto;
 }
 
 .controls {
-    height: 2rem;
     display: flex;
     justify-content: flex-end;
 }
@@ -247,11 +251,14 @@ input::placeholder {
     display: grid;
     grid-template-columns: 45% auto;
     grid-gap: 1rem;
+    grid-auto-rows: 100%;
+    overflow: auto;
 }
 
 .content__sidebar {
-    display: grid;
-    grid-gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .content__grid {
@@ -259,12 +266,11 @@ input::placeholder {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: .75rem;
     overflow: auto;
+    margin-bottom: 1rem
 }
 
 .category {
     padding: 3rem 1rem 2rem;
-    background: attr(data-bg);
-    color: attr(data-text);
     border-radius: var(--border-radius-main);
 }
 
