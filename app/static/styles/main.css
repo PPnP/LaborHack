@@ -208,32 +208,6 @@ button {
     filter: invert(16%) sepia(18%) saturate(1354%) hue-rotate(196deg) brightness(94%) contrast(94%);
 }
 
-.panel {
-    display: grid;
-    grid-gap: 1.5rem;
-    grid-template-rows: 3rem auto;
-}
-
-.controls {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.controls__search-input {
-    width: 15rem;
-}
-
-.controls__right {
-    display: flex;
-    height: 100%;
-    align-items: center;
-}
-
-.controls__right>*:not(:first-child) {
-    margin-left: 1.5rem
-}
-
 .search-input {
     border-radius: var(--border-radius-secondary);
     border: 0;
@@ -277,6 +251,7 @@ button {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: .75rem;
     overflow: auto;
+    margin-top: 1rem
 }
 
 .content__add-event {
@@ -353,26 +328,37 @@ button {
     flex-direction: column;
 }
 
-.back-button {
-    border-radius: var(--border-radius-main);
+.controls {
     display: flex;
-    visibility: hidden;
-    align-items: center;
 }
 
-.back-button_visible {
-    visibility: visible;
+.back-button {
+    border-radius: 100%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+    filter: grayscale(1) opacity(.5)
+}
+
+.back-button_on {
+    filter: none
 }
 
 .back-button::before {
     content: "";
     background: url(../images/icons/arrow.svg) no-repeat;
-    width: 1rem;
-    height: 1rem;
     display: block;
     filter: invert(1);
+    /* position: absolute; */
+    /* left: 50%; */
+    /* top: 50%; */
     transform: rotate(180deg);
-    margin-right: .5rem
+    height: 100%;
+    width: 100%;
+    margin-top: -1rem;
 }
 
 .content__title {

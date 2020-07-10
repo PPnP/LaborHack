@@ -13,24 +13,22 @@
         {% include "blocks/menu.html" %}
     </aside>
 
-    <main class="panel">
-        {% include "blocks/controls.html" %}
+    <main class="content">
+        <div class="content__sidebar">
+            {% include "blocks/controls.html" %}
 
-        <section class="content">
-            <div class="content__sidebar">
-                <div class="content__grid">
-                    {% include "locations/categories.html" %}
-                </div>
-
-                <button class="button button_fw content__add-event" id="add_event">
-                    Добавить мероприятие
-                </button>
+            <div class="content__grid">
+                {% include "locations/categories.html" %}
             </div>
 
-            {% include "locations/add_event.html" %}
+            <button class="button button_fw content__add-event" id="add_event">
+                Добавить мероприятие
+            </button>
+        </div>
 
-            <div class="content__map" id="map"></div>
-        </section>
+        {% include "locations/add_event.html" %}
+
+        <div class="content__map" id="map"></div>
     </main>
 </div>
 

@@ -10,7 +10,7 @@ const hideForm = () => {
 
     // Скрываем форму добавления мероприятия и кнопку назад
     addBlock.classList.remove("add-event_visible");
-    backButton.classList.remove("back-button_visible");
+    backButton.classList.remove("back-button_on");
 };
 
 const showForm = () => {
@@ -20,7 +20,7 @@ const showForm = () => {
 
     // Показываем форму добавления мероприятия и кнопку назад
     addBlock.classList.add("add-event_visible");
-    backButton.classList.add("back-button_visible");
+    backButton.classList.add("back-button_on");
 
     backButton.addEventListener("click", hideForm);
 };

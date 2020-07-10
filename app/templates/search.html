@@ -13,25 +13,25 @@
         {% include "blocks/menu.html" %}
     </aside>
 
-    <main class="panel">
-        {% include "blocks/controls.html" %}
+    <main class="content content_search">
+        <div class="content__sidebar">
+            <div>
+                {% include "blocks/control.html" %}
 
-        <section class="content content_search">
-            <div class="content__sidebar">
                 <div>
                     <h2 class="content__title">Поиск людей</h2>
                     <input type="text" class="search-input search-input_light search-input_fw" placeholder="Поиск" />
                 </div>
-
-                Нет формы
             </div>
 
-            <div class="search-results">
-                {% for i in range(10) %}
-                {% include "blocks/person_card.html" %}
-                {% endfor %}
-            </div>
-        </section>
+            Нет формы
+        </div>
+
+        <div class="search-results">
+            {% for i in range(10) %}
+            {% include "blocks/person_card.html" %}
+            {% endfor %}
+        </div>
     </main>
 </div>
 
