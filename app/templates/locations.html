@@ -1,9 +1,190 @@
 {% extends "base.html" %}
+{% set active_page = 'locations' %}
 
 {% block head %}
-    <title>Локации</title>
+<title>Локации</title>
 {% endblock head %}
 
 {% block content %}
-    <h1>Здесь будут локации</h1>
+
+<aside class="sidebar">
+
+    <div class="user-profile">
+        <img class="user-profile__avatar" src="https://thispersondoesnotexist.com/image">
+        <div class="user-profile__info">
+            <h1 class="user-profile__name">
+                Леонид Кравцов
+            </h1>
+            <h4 class="user-profile__occupation">
+                Род деятельности
+            </h4>
+        </div>
+    </div>
+
+    <nav class="sidelinks">
+        <a href="#" class="sidelinks__link">
+            <img src="{{ url_for('static', filename='images/icons/menu/places.svg') }}" class="sidelinks__icon">
+            Места
+        </a>
+        <a href="#" class="sidelinks__link">
+            <img src="{{ url_for('static', filename='images/icons/menu/ad.svg') }}" class="sidelinks__icon">
+            Объявления
+        </a>
+        <a href="#" class="sidelinks__link">
+            <img src="{{ url_for('static', filename='images/icons/menu/people.svg') }}" class="sidelinks__icon">
+            Люди
+        </a>
+        <a href="#" class="sidelinks__link">
+            <img src="{{ url_for('static', filename='images/icons/menu/training.svg') }}" class="sidelinks__icon">
+            Обучение
+        </a>
+        <a href="#" class="sidelinks__link">
+            <img src="{{ url_for('static', filename='images/icons/menu/help.svg') }}" class="sidelinks__icon">
+            Помощь
+        </a>
+    </nav>
+
+</aside>
+
+<main class="panel">
+    <header class="controls">
+        <a href="#" class="notifications">
+            <div class="notifications__bubble"></div>
+            <img src="{{ url_for('static', filename='images/icons/bell.svg') }}" class="notifications__bell">
+        </a>
+        <input type="text" class="search-input" placeholder="Поиск" />
+    </header>
+
+    <section class="content">
+        <div class="content__sidebar">
+            <div class="content__grid">
+                <div class="category" style="background: red; color: white">
+                    <div class="category__wrapper">
+                        <h2 class="category__title">Досуг</h2>
+                        <ul class="category__list">
+                            <li>Спорт</li>
+                            <li>Настольные игры</li>
+                            <li>Встречи, прогулки</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="category" style="background: red; color: white">
+                    <div class="category__wrapper">
+                        <h2 class="category__title">Досуг</h2>
+                        <ul class="category__list">
+                            <li>Спорт</li>
+                            <li>Настольные игры</li>
+                            <li>Встречи, прогулки</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="category" style="background: red; color: white">
+                    <div class="category__wrapper">
+                        <h2 class="category__title">Досуг</h2>
+                        <ul class="category__list">
+                            <li>Спорт</li>
+                            <li>Настольные игры</li>
+                            <li>Встречи, прогулки</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="category" style="background: red; color: white">
+                    <div class="category__wrapper">
+                        <h2 class="category__title">Досуг</h2>
+                        <ul class="category__list">
+                            <li>Спорт</li>
+                            <li>Настольные игры</li>
+                            <li>Встречи, прогулки</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="category" style="background: red; color: white">
+                    <div class="category__wrapper">
+                        <h2 class="category__title">Досуг</h2>
+                        <ul class="category__list">
+                            <li>Спорт</li>
+                            <li>Настольные игры</li>
+                            <li>Встречи, прогулки</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="category" style="background: red; color: white">
+                    <div class="category__wrapper">
+                        <h2 class="category__title">Досуг</h2>
+                        <ul class="category__list">
+                            <li>Спорт</li>
+                            <li>Настольные игры</li>
+                            <li>Встречи, прогулки</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <button class="button button_fw">
+                Добавить мероприятие
+            </button>
+        </div>
+        <div class="content__map" id="map">
+
+        </div>
+    </section>
+</main>
+
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=8a048b9d-cb38-42a8-8f87-21d4ccbadd5d"
+    type="text/javascript"></script>
+<script>
+    ymaps.ready(function () {
+        var myMap = new ymaps.Map('map', {
+            center: [55.751574, 37.573856],
+            zoom: 9
+        }, {
+            searchControlProvider: 'yandex#search'
+        }),
+
+            // Создаём макет содержимого.
+            MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+                '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+            ),
+
+            myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+                hintContent: 'Собственный значок метки',
+                balloonContent: 'Это красивая метка'
+            }, {
+                // Опции.
+                // Необходимо указать данный тип макета.
+                iconLayout: 'default#image',
+                // Своё изображение иконки метки.
+                iconImageHref: 'images/myIcon.gif',
+                // Размеры метки.
+                iconImageSize: [30, 42],
+                // Смещение левого верхнего угла иконки относительно
+                // её "ножки" (точки привязки).
+                iconImageOffset: [-5, -38]
+            }),
+
+            myPlacemarkWithContent = new ymaps.Placemark([55.661574, 37.573856], {
+                hintContent: 'Собственный значок метки с контентом',
+                balloonContent: 'А эта — новогодняя',
+                iconContent: '12'
+            }, {
+                // Опции.
+                // Необходимо указать данный тип макета.
+                iconLayout: 'default#imageWithContent',
+                // Своё изображение иконки метки.
+                iconImageHref: 'images/ball.png',
+                // Размеры метки.
+                iconImageSize: [48, 48],
+                // Смещение левого верхнего угла иконки относительно
+                // её "ножки" (точки привязки).
+                iconImageOffset: [-24, -24],
+                // Смещение слоя с содержимым относительно слоя с картинкой.
+                iconContentOffset: [15, 15],
+                // Макет содержимого.
+                iconContentLayout: MyIconContentLayout
+            });
+
+        myMap.geoObjects
+            .add(myPlacemark)
+            .add(myPlacemarkWithContent);
+    });
+</script>
 {% endblock content %}
