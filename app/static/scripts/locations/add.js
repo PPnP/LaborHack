@@ -22,6 +22,8 @@ const showForm = () => {
     addBlock.classList.add("add-event_visible");
     backButton.classList.add("back-button_on");
 
+    activateButtons();
+
     backButton.addEventListener("click", hideForm);
 };
 
