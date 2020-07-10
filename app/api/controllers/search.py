@@ -3,7 +3,7 @@ from flask.views import MethodView
 from flask_login import current_user
 
 
-class SearchController(MethodView):
+class SearchPeopleController(MethodView):
     def get(self):
         user = None
         if current_user.is_authenticated:

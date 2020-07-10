@@ -16,8 +16,8 @@ api.add_url_rule('/locations', view_func=LocationsController.as_view('Locations'
 from app.api.controllers.desk import DeskController
 api.add_url_rule('/desk', view_func=DeskController.as_view('Desk'))
 
-from app.api.controllers.search import SearchController
-api.add_url_rule('/search', view_func=SearchController.as_view('Search'))
+from app.api.controllers.search import SearchPeopleController
+api.add_url_rule('/search', view_func=SearchPeopleController.as_view('SearchPeople'))
 
 from app.api.controllers.education import EducationController
 api.add_url_rule('/education', view_func=EducationController.as_view('Education'))
