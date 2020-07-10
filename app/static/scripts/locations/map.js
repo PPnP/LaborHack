@@ -35,15 +35,8 @@ const deactivateButtons = (except) => {
 };
 
 const init = () => {
-    // Создание карты.    
     ymap = new ymaps.Map("map", {
-        // Координаты центра карты.
-        // Порядок по умолчанию: «широта, долгота».
-        // Чтобы не определять координаты центра карты вручную,
-        // воспользуйтесь инструментом Определение координат.
         center: [59.91, 30.50],
-        // Уровень масштабирования. Допустимые значения:
-        // от 0 (весь мир) до 19.
         zoom: 12
     });
 
@@ -66,20 +59,19 @@ const categoryButtonClick = (button) => {
     deactivateButtons(button);
 };
 
-const drawPlace = (map, category, placeJSON) => {
+const drawPlace = (map, category, color, placeJSON) => {
     let collection = new ymaps.GeoObjectCollection({}, {
         feature: category
     });
 
     placeJSON.forEach(place => {
-        let obj = new ymaps.GeoObject({
-            geometry: {
-                type: "Point",
-                coordinates: [
-                    place.latitude,
-                    place.longitude
-                ]
-            }
+        let obj = new ymaps.Placemark([place.latitude, place.longitude], {
+            hintContent: place.title,
+            balloonContentHeader: place.title,
+            balloonContentBody: place.description,
+            balloonContentFooter: place.address
+        }, {
+            iconColor: color
         });
 
         collection.add(obj);
@@ -89,18 +81,12 @@ const drawPlace = (map, category, placeJSON) => {
 }
 
 const loadPlacesJSON = (map) => {
-    let categories = [
-        "culture",
-        "development",
-        "food",
-        "leisure",
-        "life",
-        "religion",
-    ];
+    categoryButtons.forEach(button => {
+        let category = button.getAttribute("data-slug");
+        let color = button.style.backgroundColor;
 
-    categories.forEach(category => {
         getPlaceJson(category).then((json) => {
-            drawPlace(map, category, json);
+            drawPlace(map, category, color, json);
         });
     });
 }
