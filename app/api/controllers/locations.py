@@ -8,6 +8,8 @@ from app.api.forms.event import AddEventForm
 
 
 class LocationsController(FormController):
+    action = '/locations'
+
     def get_form(self) -> FlaskForm:
         return AddEventForm()
 
@@ -15,8 +17,9 @@ class LocationsController(FormController):
         user = None
         if current_user.is_authenticated:
             user = current_user
-        return render_template('locations.html', yandex_api_key=yandex_api_key, user=user)
+        return render_template('locations.html', form=self.get_form(), action=self.action,
+                               yandex_api_key=yandex_api_key, user=user)
 
-    def post(self):
-        flash('Заявка успешно отправлена', 'success')
+    def process(self, form: FlaskForm):
+        flash('Мероприятие успешно добавлено', 'success')
         return redirect(url_for('api.Locations'))

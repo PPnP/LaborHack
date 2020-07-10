@@ -122,6 +122,17 @@
             <button class="button button_fw">
                 Добавить мероприятие
             </button>
+
+            <form action="{{ action }}" method="POST">
+                {{ form.hidden_tag() }}
+
+                {{ form.title }}
+                {{ form.datetime }}
+                {{ form.location }}
+                {{ form.category }}
+                {{ form.submit }}
+            </form>
+
         </div>
         <div class="content__map" id="map">
 
