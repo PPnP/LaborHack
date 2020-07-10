@@ -1,9 +1,43 @@
 {% extends "base.html" %}
+{% set active_page = 'search' %}
 
 {% block head %}
-    <title>Поиск друзей</title>
+<title>Люди</title>
 {% endblock head %}
 
 {% block content %}
-    <h1>Здесь будет поиск друзей</h1>
+
+<div class="wrapper">
+    <aside class="sidebar">
+        {% include "blocks/profile.html" %}
+        {% include "blocks/menu.html" %}
+    </aside>
+
+    <main class="panel">
+        {% include "blocks/controls.html" %}
+
+        <section class="content content_search">
+            <div class="content__sidebar">
+                <div>
+                    <h2 class="content__title">Поиск людей</h2>
+                    <input type="text" class="search-input search-input_light search-input_fw" placeholder="Поиск" />
+                </div>
+
+                Нет формы
+            </div>
+
+
+            <div class="search-results">
+                {% for i in range(10) %}
+                {% include "blocks/person_card.html" %}
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+</div>
+
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey={{ yandex_api_key }}"
+    type="text/javascript"></script>
+<script src="{{ url_for('static', filename='scripts/locations/map.js') }}"></script>
+<script src="{{ url_for('static', filename='scripts/locations/add.js') }}"></script>
 {% endblock content %}

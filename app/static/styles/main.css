@@ -114,9 +114,7 @@ select {
     width: 100%;
 }
 
-/* Locations */
-
-.locations {
+.wrapper {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -128,6 +126,8 @@ select {
     grid-gap: 1.5rem;
     grid-auto-rows: 100%;
 }
+
+/* Locations */
 
 .sidebar {
     display: grid;
@@ -221,6 +221,10 @@ select {
     align-items: center;
 }
 
+.controls__search-input {
+    width: 15rem;
+}
+
 .controls__right {
     display: flex;
     height: 100%;
@@ -234,11 +238,18 @@ select {
 .search-input {
     border-radius: var(--border-radius-secondary);
     border: 0;
-    height: 100%;
     color: var(--main-dark);
+    padding: .5rem 1rem;
     background: url(../images/icons/magnifier.svg) var(--secondary-accent) no-repeat scroll .75rem 50%;
-    text-indent: 2.5rem;
-    width: 15rem;
+    text-indent: 1.75rem;
+}
+
+.search-input_light {
+    background: url(../images/icons/magnifier.svg) #fff no-repeat scroll .75rem 50%;
+}
+
+.search-input_fw {
+    width: 100%;
 }
 
 .content {
@@ -250,6 +261,10 @@ select {
     grid-gap: 1rem;
     grid-auto-rows: 100%;
     overflow: auto;
+}
+
+.content_search {
+    grid-template-columns: 35% auto;
 }
 
 .content__sidebar {
@@ -353,4 +368,36 @@ select {
     filter: invert(1);
     transform: rotate(180deg);
     margin-right: .5rem
+}
+
+.content__title {
+    font-weight: 600;
+    margin-bottom: 1rem
+}
+
+.search-results {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    overflow: auto;
+}
+
+.person-card__photo {
+    vertical-align: bottom;
+    border-radius: var(--border-radius-secondary);
+}
+
+.person-card__name {
+    font-weight: 600;
+    margin-bottom: .25rem
+}
+
+.person-card__info {
+    padding: 1rem;
+    padding-top: 1.25rem;
+    margin-top: -.25rem;
+    background: #fff;
+    border-radius: var(--border-radius-secondary);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 }
