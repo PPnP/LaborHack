@@ -4,7 +4,7 @@ from flask_login import current_user
 
 from config import yandex_api_key
 from app.api.controllers.form import FormController
-from app.api.forms.event import AddEventForm
+from app.api.forms.locations import AddEventForm
 
 
 class LocationsController(FormController):
@@ -21,5 +21,5 @@ class LocationsController(FormController):
                                yandex_api_key=yandex_api_key, user=user)
 
     def process(self, form: FlaskForm):
-        flash('Мероприятие успешно добавлено', 'success')
+        flash('Мероприятие добавлено', 'success')
         return redirect(url_for('api.Locations'))

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Профиль</title>
+{% endblock head %}
+
+{% block content %}
+    <h1>Здесь будет профиль</h1>
+
+    <h3>Форма добавления портфолио</h3>
+
+    <form action="{{ action }}" method="POST">
+        {{ form.hidden_tag() }}
+
+        {{ form.file }}
+        {{ form.title }}
+        {{ form.date }}
+        {{ form.submit }}
+    </form>
+{% endblock content %}

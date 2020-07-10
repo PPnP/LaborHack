@@ -7,6 +7,9 @@ api = Blueprint('api', __name__, template_folder='../templates', static_folder='
 from app.api.controllers.index import IndexController
 api.add_url_rule('/', view_func=IndexController.as_view('Index'))
 
+from app.api.controllers.profile import ProfileController
+api.add_url_rule('/profile', view_func=ProfileController.as_view('Profile'))
+
 from app.api.controllers.locations import LocationsController
 api.add_url_rule('/locations', view_func=LocationsController.as_view('Locations'))
 
