@@ -38,7 +38,8 @@ def data_dumping():
          "type": "Спорт/отдых", "description": "Каток от 300руб/час", "language": "Русский", "rating": 3.4},
         {"latitude": "59.89706", "longitude": "30.49369", "address": "пр. Большевиков, 38к1", "title": "Футбольное поле",
          "type": "Спорт", "description": "Бесплатное футбольное поле. Инвентарь приносить свой", "language": "",
-         "rating": 4.9}]
+         "rating": 4.9}
+    ]
     religion = [
         {"latitude": "60.01775", "longitude": "30.28112", "address": "Репищева ул., 1, Санкт-Петербург",
          "title": "Квартальная мечеть им. Джафара Насибулловича", "type": "Мечеть",
@@ -54,7 +55,8 @@ def data_dumping():
          "language": "русский, арабский, киргизский, казахский, узбекский, таджикский", "rating": 4.6},
         {"latitude": "59.92263", "longitude": "30.46424", "address": "парк Оккервиль",
          "title": "Изучение Карана в парке", "type": "Встреча", "description": "Общаемся и познаём Аллаха",
-         "language": "русский, узбекский", "rating": 4.9}]
+         "language": "русский, узбекский", "rating": 4.9}
+    ]
     life = [
         {"latitude": "59.90339", "longitude": "30.47485", "address": "пр. Большевиков, 25", "title": "Только ты",
          "type": "Парикмахерская", "description": "Профессиональные стилисты и визажисты со всей страны!",
@@ -66,7 +68,8 @@ def data_dumping():
          "language": "Русский", "rating": 2.9},
         {"latitude": "59.9001", "longitude": "30.52047", "address": "просп. Строителей, 33, Кудрово",
          "title": "МФЦ ГБУ ЛО", "type": "МФЦ", "description": "Многофункциональный центр",
-         "language": "Русский, Узбекский, Казахский, Английский", "rating": 4.7}]
+         "language": "Русский, Узбекский, Казахский, Английский", "rating": 4.7}
+    ]
     food = [
         {"latitude": "59.91416", "longitude": "30.47454", "address": "просп. Большевиков, 9, корп. 1, Санкт-Петербург",
          "title": "Чайхана Чабрец", "type": "Кафе", "description": "Вкусно и недорого!",
@@ -87,7 +90,8 @@ def data_dumping():
         {"latitude": "59.9036", "longitude": "30.50919", "address": "Австрийская ул., 4, корп. 1, Кудрово",
          "title": "Семишагофф", "type": "Продуктовый", "description": "", "language": "русский, узбекский, киргизский",
          "rating": 3.5,
-         "reviews": "көп учурда, жөө аралыкта жайгашкан, башка супермаркеттер менен бирге, бирок аны кезекти бул дүкөн дээрлик жок, жана башкы нерсе тандап."}]
+         "reviews": "көп учурда, жөө аралыкта жайгашкан, башка супермаркеттер менен бирге, бирок аны кезекти бул дүкөн дээрлик жок, жана башкы нерсе тандап."}
+    ]
     culture = [
         {"latitude": "59.90061", "longitude": "30.50858", "address": "Венская ул., 4, корп. 1, Кудрово",
          "title": "EXPODOM", "type": "Выставка", "description": "Постоянная выставка загородного строительства",
@@ -99,7 +103,8 @@ def data_dumping():
          "title": "Картины в дом", "type": "Картинная галерея", "description": "", "language": "", "rating": 2.3},
         {"latitude": "59.9006", "longitude": "30.5087", "address": "Венская ул., 3", "title": "Шить - Легко!",
          "type": "Курсы", "description": "Курсы шитья в ателье Шить - Легко!, бесплатно научим шить!",
-         "language": "Русский", "rating": 4.9}]
+         "language": "Русский", "rating": 4.9}
+    ]
     development = [
         {"latitude": "59.9027904", "longitude": "30.5170321", "address": "Английская улица, 3",
          "title": "Курсы русского языка", "type": "Курсы",
@@ -116,7 +121,27 @@ def data_dumping():
          "language": "", "rating": 5, "reviews": "абдан жакшы"},
         {"latitude": "59.89681", "longitude": "30.51033", "address": "Центральная ул., 54, корп. 2, Кудрово",
          "title": "Готовим плов", "type": "Мастер-класс", "description": "Научим готовить очень вкусный плов",
-         "language": "русский, узбекский", "rating": 4, "reviews": "juda yaxshi yoqdi"}]
+         "language": "русский, узбекский", "rating": 4, "reviews": "juda yaxshi yoqdi"}
+    ]
+    services = [
+        {"title": "Срочно нужна дрель", "type": "Инструменты", "get/provide": "Получить",
+         "description": "Только на один день", "author_id": "562792", "price": ""},
+        {"title": "телефон на день", "type": "", "get/provide": "Получить",
+         "description": "сломался телефон не включается срочно нужен телефон на завтра", "author_id": "109290",
+         "price": "200"},
+        {"title": "отдам коляску", "type": "Для детей", "get/provide": "Оказать",
+         "description": "Отдам коляску, пользовалась два года", "author_id": "125123", "price": ""},
+        {"title": "Молоток", "type": "Инструменты", "get/provide": "Получить",
+         "description": "Нужен качественный молоток для стойки", "author_id": "991255", "price": "1400"},
+        {"title": "Подстригу как себя", "type": "Парикмахер", "get/provide": "Оказать",
+         "description": "Очень красиво недорого любая стрижка", "author_id": "562794", "price": "1000"},
+        {"title": "Срочно ребенка дать", "type": "Няня", "get/provide": "Получить",
+         "description": "Посиди с ребенком один день марҳамат очень надо накормлю", "author_id": "109294", "price": "0"},
+        {"title": "Любой ремонт хорошо", "type": "Стройка", "get/provide": "Оказать",
+         "description": "Сделаю всё стены пол крыша обои всё быстро очень", "author_id": "125124", "price": "500"},
+        {"title": "Сломался телефон", "type": "Ремонт", "get/provide": "Получить",
+         "description": "Сломался экран на nokia срочно надо", "author_id": "991254", "price": "300"}
+    ]
 
     if os.path.exists('data'):
         shutil.rmtree('data')
@@ -134,6 +159,8 @@ def data_dumping():
         json.dump(culture, output)
     with open('data/development.json', 'w') as output:
         json.dump(development, output)
+    with open('data/services.json', 'w') as output:
+        json.dump(services, output)
 
 
 if __name__ == '__main__':
