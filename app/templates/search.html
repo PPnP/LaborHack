@@ -21,15 +21,9 @@
         </div>
 
         <div class="search-results">
-            {% for i in range(10) %}
-            {% include "blocks/person_card.html" %}
-            {% endfor %}
+            {% include "search/people.html" %}
         </div>
     </main>
 </div>
 
-<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey={{ yandex_api_key }}"
-    type="text/javascript"></script>
-<script src="{{ url_for('static', filename='scripts/locations/map.js') }}"></script>
-<script src="{{ url_for('static', filename='scripts/locations/add.js') }}"></script>
 {% endblock content %}
