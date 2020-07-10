@@ -1,0 +1,29 @@
+<div class="add-event">
+    <h2 class="add-event__title">
+        Новое мероприятие
+    </h2>
+
+    <form action="{{ action }}" method="POST" class="add-event__form">
+        {{ form.hidden_tag() }}
+
+        <div class="add-event__labels">
+            <label class="add-event__label">Название
+                {{ form.title(class="add-event__input") }}
+            </label>
+
+            <label class="add-event__label">Дата и время
+                {{ form.datetime(class="add-event__input") }}
+            </label>
+
+            <label class="add-event__label">Место
+                {{ form.location(class="add-event__input") }}
+            </label>
+
+            <label class="add-event__label">Категория
+                {{ form.category(class="add-event__input") }}
+            </label>
+        </div>
+
+        {{ form.submit(class="button button_fw") }}
+    </form>
+</div>

@@ -1,0 +1,19 @@
+{% set links = [] %}
+{% do links.append({'href': 'locations', 'image': 'images/icons/menu/places.svg', 'text': 'Места'}) %}
+{% do links.append({'href': 'desk', 'image': 'images/icons/menu/ad.svg', 'text': 'Объявления'}) %}
+{% do links.append({'href': 'search', 'image': 'images/icons/menu/people.svg', 'text': 'Люди'}) %}
+{% do links.append({'href': 'education', 'image': 'images/icons/menu/training.svg', 'text': 'Обучение'}) %}
+{% do links.append({'href': 'help', 'image': 'images/icons/menu/help.svg', 'text': 'Помощь'}) %}
+
+<nav class="sidelinks">
+    {% for link in links %}
+    {% set active = "" %}
+    {% if link['href'] == active_page %}
+    {% set active = "sidelinks__link_active" %}
+    {% endif %}
+    <a href="/{{ link['href'] }}" class="sidelinks__link {{ active }}">
+        <img src="{{ url_for('static', filename=link['image']) }}" class="sidelinks__icon">
+        {{ link['text']}}
+    </a>
+    {% endfor %}
+</nav>

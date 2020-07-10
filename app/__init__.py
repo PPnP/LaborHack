@@ -9,6 +9,7 @@ from threading import Thread
 
 application = Flask(__name__, template_folder='./templates', static_folder='./static')
 application.config.from_object('config')
+application.jinja_env.add_extension('jinja2.ext.do')
 
 manager = Manager(application)
 
