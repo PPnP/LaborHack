@@ -353,9 +353,6 @@ button {
     background: url(../images/icons/arrow.svg) no-repeat;
     display: block;
     filter: invert(1);
-    /* position: absolute; */
-    /* left: 50%; */
-    /* top: 50%; */
     transform: rotate(180deg);
     height: 100%;
     width: 100%;
@@ -366,6 +363,8 @@ button {
     font-weight: 600;
     margin-bottom: 1rem
 }
+
+/* People */
 
 .search-results {
     display: grid;
