@@ -34,6 +34,7 @@ html {
 
 body,
 html {
+    background: #F7FAFF;
     overflow-x: hidden
 }
 
@@ -92,6 +93,7 @@ input,
 input::placeholder {
     font-family: 'Avenir', Arial, Helvetica, sans-serif;
     font-size: 1rem;
+    outline: 0;
 }
 
 /* Generic */
@@ -217,31 +219,12 @@ input::placeholder {
     margin-left: 1.5rem
 }
 
-.notifications {
-    height: 100%;
-    position: relative;
-}
-
-.notifications__bell {
-    height: calc(100% - .25rem);
-    margin-top: .25rem;
-}
-
-.notifications__bubble {
-    width: .75rem;
-    height: .75rem;
-    background: var(--alert);
-    border-radius: 100%;
-    position: absolute;
-    right: 0;
-}
-
 .search-input {
     border-radius: var(--border-radius-secondary);
     border: 0;
     color: var(--main-dark);
-    background: url(../images/icons/magnifier.svg) var(--secondary-accent) no-repeat scroll .5rem 7px;
-    padding-left: 2rem;
+    background: url(../images/icons/magnifier.svg) var(--secondary-accent) no-repeat scroll .75rem 50%;
+    text-indent: 2.5rem;
 }
 
 .content {
