@@ -52,9 +52,7 @@ body {
 }
 
 button {
-    font-family: 'Avenir', Arial, Helvetica, sans-serif;
     cursor: pointer;
-    outline: 0;
 }
 
 h1,
@@ -91,7 +89,8 @@ img {
 
 input,
 input::placeholder,
-select {
+select,
+button {
     font-family: 'Avenir', Arial, Helvetica, sans-serif;
     font-size: 1rem;
     outline: 0;
@@ -287,6 +286,12 @@ select {
 .category {
     padding: 3rem 1rem 2rem;
     border-radius: var(--border-radius-main);
+    border: 0;
+    text-align: left;
+}
+
+.category_inactive {
+    opacity: .5
 }
 
 .category__list {

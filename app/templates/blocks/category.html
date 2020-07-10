@@ -1,10 +1,10 @@
-<div class="category" style="background: red; color: white">
+<button class="category" data-slug="{{ slug }}" style="background: {{ bg }}; color: {{ text }}">
     <div class="category__wrapper">
-        <h2 class="category__title">Досуг</h2>
+        <h2 class="category__title">{{ title }}</h2>
         <ul class="category__list">
-            <li>Спорт</li>
-            <li>Настольные игры</li>
-            <li>Встречи, прогулки</li>
+            {% for item in list %}
+            <li>{{ item }}</li>
+            {% endfor %}
         </ul>
     </div>
-</div>
+</button>
