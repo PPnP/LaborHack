@@ -366,6 +366,11 @@ button {
 
 /* People */
 
+.content__filters {
+    display: grid;
+    grid-gap: 1rem;
+}
+
 .search-results {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -376,6 +381,7 @@ button {
 .person-card__photo {
     vertical-align: bottom;
     border-radius: var(--border-radius-secondary);
+    width: 100%
 }
 
 .person-card__name {
@@ -385,10 +391,52 @@ button {
 
 .person-card__info {
     padding: 1rem;
-    padding-top: 1.25rem;
-    margin-top: -.25rem;
+    padding-top: calc(1rem + 5%);
+    margin-top: -5%;
     background: #fff;
     border-radius: var(--border-radius-secondary);
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+}
+
+.selection {
+    overflow: auto;
+}
+
+.selection__title {
+    font-weight: 600;
+    margin-bottom: .5rem;
+}
+
+.selection__grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1rem;
+}
+
+.selection__grid_single-col {
+    grid-template-columns: 1fr;
+}
+
+.selection__image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.selection__button {
+    border: 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius-secondary);
+}
+
+.selection__button_square::before {
+    content: "";
+    padding-bottom: 100%;
+    display: block;
 }
