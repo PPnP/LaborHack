@@ -1,8 +1,8 @@
-<article class="person-card" data-district="{{ location }}" data-language="{{ language }}">
+<a href="/profile" class="person-card" data-district="{{ location }}" data-language="{{ language }}">
     <img class="person-card__photo" src="{{ url_for('static', filename=image) }}">
     <div class="person-card__info">
         <h4 class="person-card__name">{{ name }}</h4>
         <p class="person-card__extra">{{ occupation }}</p>
         <p class="person-card__extra">{{ location }}</p>
     </div>
-</article>
+</a>

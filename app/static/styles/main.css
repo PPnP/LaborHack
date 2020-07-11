@@ -490,6 +490,11 @@ textarea {
     overflow: auto;
 }
 
+.person-card {
+    text-decoration: none;
+    color: var(--main-dark)
+}
+
 .person-card_invisible {
     display: none;
 }
