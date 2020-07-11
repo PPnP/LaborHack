@@ -1,17 +1,33 @@
-<div class="selection">
+<div class="selection" id="language_selection">
     <h2 class="selection__title">Язык</h2>
     <div class="selection__grid">
-        <button class="selection__button selection__button_square">
-            <img src="{{ url_for('static', filename='images/icons/flags/uz.svg') }}" class="selection__image">
-        </button>
-        <button class="selection__button selection__button_square">
-            <img src="{{ url_for('static', filename='images/icons/flags/uz.svg') }}" class="selection__image">
-        </button>
-        <button class="selection__button selection__button_square">
-            <img src="{{ url_for('static', filename='images/icons/flags/uz.svg') }}" class="selection__image">
-        </button>
-        <button class="selection__button selection__button_square">
-            <img src="{{ url_for('static', filename='images/icons/flags/uz.svg') }}" class="selection__image">
-        </button>
+        <div class="checkbox selection__button selection__button_square">
+            <input class="custom-checkbox" type="checkbox" id="lan-1" name="lan-1" value="uz">
+            <label for="lan-1" class="custom-checkbox__label custom-checkbox__label_invisible">
+                <img src="{{ url_for('static', filename='images/icons/flags/uz.png') }}"
+                    class="selection__image custom-checkbox__label">
+            </label>
+        </div>
+        <div class="checkbox selection__button selection__button_square">
+            <input class="custom-checkbox" type="checkbox" id="lan-2" name="lan-2" value="kg">
+            <label for="lan-2" class="custom-checkbox__label custom-checkbox__label_invisible">
+                <img src="{{ url_for('static', filename='images/icons/flags/kg.png') }}"
+                    class="selection__image custom-checkbox__label">
+            </label>
+        </div>
+        <div class="checkbox selection__button selection__button_square">
+            <input class="custom-checkbox" type="checkbox" id="lan-3" name="lan-3" value="ru">
+            <label for="lan-3" class="custom-checkbox__label custom-checkbox__label_invisible">
+                <img src="{{ url_for('static', filename='images/icons/flags/ru.png') }}"
+                    class="selection__image custom-checkbox__label">
+            </label>
+        </div>
+        <div class="checkbox selection__button selection__button_square">
+            <input class="custom-checkbox" type="checkbox" id="lan-4" name="lan-4" value="kz">
+            <label for="lan-4" class="custom-checkbox__label custom-checkbox__label_invisible">
+                <img src="{{ url_for('static', filename='images/icons/flags/kz.png') }}"
+                    class="selection__image custom-checkbox__label">
+            </label>
+        </div>
     </div>
 </div>

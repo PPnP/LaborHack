@@ -1,4 +1,4 @@
-<article class="person-card">
+<article class="person-card" data-district="{{ location }}" data-language="{{ language }}">
     <img class="person-card__photo" src="{{ url_for('static', filename=image) }}">
     <div class="person-card__info">
         <h4 class="person-card__name">{{ name }}</h4>

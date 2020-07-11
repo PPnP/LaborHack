@@ -1,17 +1,7 @@
 const input = document.querySelector(".search-input");
 const contents = document.querySelectorAll(".category");
 
-const debounceEvent = (callback, time) => {
-    let interval;
-    return (...args) => {
-        clearTimeout(interval);
-        interval = setTimeout(() => {
-            interval = null;
-            callback(...args);
-        }, time);
-    };
-};
-
+// Выполняет поиск
 const search = debounceEvent(() => {
     let query = input.value;
 
@@ -24,4 +14,16 @@ const search = debounceEvent(() => {
     });
 }, 300)
 
-input.addEventListener("keyup", search);
+// Очищает строку поиска и показывает все результаты
+const cancelSearch = () => {
+    backButton.classList.remove("back-button_on");
+    input.value = "";
+    search();
+}
+
+backButton.addEventListener("click", cancelSearch);
+
+input.addEventListener("keyup", () => {
+    backButton.classList.add("back-button_on");
+    search();
+});

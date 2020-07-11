@@ -18,8 +18,9 @@
             <div class="content__filters">
                 {% include "blocks/controls.html" %}
                 {% include "blocks/language_selection.html" %}
+                {% include "blocks/district_selection.html" %}
             </div>
-            <button class="button button_fw">
+            <button class="button button_fw" id="find_button">
                 Найти
             </button>
         </div>
@@ -30,4 +31,6 @@
     </main>
 </div>
 
+<script src="{{ url_for('static', filename='scripts/debounce.js') }}"></script>
+<script src="{{ url_for('static', filename='scripts/people/search.js') }}"></script>
 {% endblock content %}
