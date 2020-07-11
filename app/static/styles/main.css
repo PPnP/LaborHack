@@ -397,7 +397,8 @@ textarea {
 
 .add-event__labels,
 .get-help__labels {
-    grid-gap: 1rem
+    grid-gap: 1rem;
+    margin-bottom: 1rem
 }
 
 .add-event__input,
@@ -765,4 +766,42 @@ textarea {
 .help__we-will-help {
     width: 40%;
     margin: 4rem auto 2rem
+}
+
+@media screen and (max-width: 1000px) {
+
+    .wrapper,
+    .content,
+    .search-results,
+    .get-help {
+        grid-template-columns: 1fr;
+        grid-auto-rows: minmax(min-content, max-content);
+    }
+
+    .wrapper {
+        grid-gap: 3rem;
+        position: static;
+        left: 0;
+        top: 0;
+        transform: none;
+        height: auto;
+        margin: 2rem auto;
+    }
+
+    .content__map {
+        height: 30rem;
+        order: -1
+    }
+
+    .education__button {
+        width: 100%;
+    }
+
+    .get-help__button {
+        width: 50%;
+    }
+
+    .help__arrow {
+        display: none;
+    }
 }
