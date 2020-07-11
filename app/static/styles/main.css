@@ -444,8 +444,8 @@ button {
     -webkit-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     transform: rotate(180deg);
-    height: 100%;
-    width: 100%;
+    height: 2rem;
+    width: 2rem;
     margin-top: -1rem;
 }
 
