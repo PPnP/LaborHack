@@ -269,6 +269,10 @@ button {
     opacity: .5
 }
 
+.category_invisible {
+    display: none;
+}
+
 .category__list {
     margin-top: 1rem;
 }
