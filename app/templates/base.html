@@ -9,13 +9,16 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/reset.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/fonts.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/preloader.css') }}">
 
     <!-- <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/ico"> -->
     {% block head %}{% endblock head %}
 </head>
 
 <body class="{{ active_page }}">
+    {% include "misc/preloader.html" %}
     {% block content %}{% endblock content %}
+    <script src="{{ url_for('static', filename='scripts/preloader.js') }}"></script>
 </body>
 
 </html>
