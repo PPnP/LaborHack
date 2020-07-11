@@ -35,11 +35,7 @@ const activateButtons = () => {
 // Деактивирует все кнопки, кроме данной
 const deactivateButtons = (except) => {
     categoryButtons.forEach(button => {
-        if (button == except) {
-            return button.classList.remove("category_inactive");
-        }
-
-        button.classList.add("category_inactive");
+        button.classList.toggle("category_inactive", button != except);
     });
 };
 
