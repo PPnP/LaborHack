@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% set active_page = 'stayhome' %}
+
+{% block head %}
+<title>Оставайтесь дома</title>
+{% endblock head %}
+
+{% block content %}
+
+<div class="wrapper">
+    <aside class="sidebar">
+        {% include "blocks/profile.html" %}
+        {% include "blocks/menu.html" %}
+    </aside>
+
+    <main class="content content_single-col">
+        {% with back=True, search=True %}
+        {% include "blocks/controls.html" %}
+        {% endwith %}
+
+        <img src="{{ url_for('static', filename='images/stayhome.png') }}" height="85%">
+    </main>
+</div>
+
+{% endblock content %}
