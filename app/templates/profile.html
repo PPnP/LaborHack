@@ -1,20 +1,68 @@
 {% extends "base.html" %}
+{% set active_page = 'search' %}
 
 {% block head %}
-    <title>Профиль</title>
+<title>Профиль</title>
 {% endblock head %}
 
 {% block content %}
-    <h1>Здесь будет профиль</h1>
 
-    <h3>Форма добавления портфолио</h3>
+<div class="wrapper">
+    <aside class="sidebar">
+        {% include "blocks/profile.html" %}
+        {% include "blocks/menu.html" %}
+    </aside>
 
-    <form action="{{ action }}" method="POST">
-        {{ form.hidden_tag() }}
+    <main class="content content_single-col">
+        {% with back=True %}
+        {% include "blocks/controls.html" %}
+        {% endwith %}
 
-        {{ form.file }}
-        {{ form.title }}
-        {{ form.date }}
-        {{ form.submit }}
-    </form>
+        <div class="profile">
+            <div class="profile__person-info">
+                <img class="profile__avatar" src="{{ url_for('static', filename='images/people/1.png') }}">
+                <div class="profile__bio">
+                    <h1 class="profile__name">Рашидов Алтай</h1>
+                    <h3>Кудрово, Санкт-Петербург</h3>
+                    <h3>Разнорабочий</h3>
+                    <h3>8 999 99 23 41</h3>
+                    <h3>Мои социальные сети</h3>
+                    <div class="profile__social">
+                        <a href="#">
+                            <img src="{{ url_for('static', filename='images/icons/social/whatsapp.png') }}">
+                        </a>
+                        <a href="#">
+                            <img src="{{ url_for('static', filename='images/icons/social/instagram.png') }}">
+                        </a>
+                        <a href="#">
+                            <img src="{{ url_for('static', filename='images/icons/social/vk.png') }}">
+                        </a>
+                    </div>
+                    <button class="button">
+                        Добавить в друзья
+                    </button>
+                </div>
+            </div>
+            <div class="profile__achievements">
+                <div class="achievement">
+                    <img src="{{ url_for('static', filename='/images/icons/medal.svg') }}" class="achievement__image">
+                    <h4 class="achievement__title">Мастер русского языка</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile__portfolio">
+            <h2>Портфолио</h2>
+            <div class="portfolio-grid profile__portfolio-grid">
+                {% for i in range(5) %}
+                {% with image=url_for('static', filename='images/portfolio/1.png'), title='Отделка гостиной', date="25.02.2020" %}
+                {% include "blocks/portfolio_item.html" %}
+                {% endwith %}
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+</div>
+
+<script src="{{ url_for('static', filename='scripts/profile/back.js') }}"></script>
 {% endblock content %}

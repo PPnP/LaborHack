@@ -15,7 +15,9 @@
 
     <main class="content">
         <div class="content__sidebar">
+            {% with back=True, search=True %}
             {% include "blocks/controls.html" %}
+            {% endwith %}
 
             <div class="content__grid">
                 {% include "locations/categories.html" %}
