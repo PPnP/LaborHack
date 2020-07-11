@@ -534,6 +534,10 @@ textarea {
 
 /* People */
 
+.content_search {
+    grid-template-columns: 35% auto;
+}
+
 .search__content {
     -ms-grid-columns: 35% auto;
     grid-template-columns: 35% auto;
