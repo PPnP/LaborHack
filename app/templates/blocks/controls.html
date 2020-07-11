@@ -4,6 +4,10 @@
     {% endif %}
 
     {% if search %}
+    {% if search_fw == False %}
+    <input type="text" class="search-input search-input_light" placeholder="Поиск" />
+    {% else %}
     <input type="text" class="search-input search-input_fw search-input_light" placeholder="Поиск" />
+    {% endif %}
     {% endif %}
 </header>

@@ -14,11 +14,11 @@
     </aside>
 
     <main class="content content_single-col">
-        {% with back=True, search=True %}
+        {% with back=True, search=True, search_fw=False %}
         {% include "blocks/controls.html" %}
         {% endwith %}
 
-        <img src="{{ url_for('static', filename='images/stayhome.png') }}" height="85%">
+        <img src="{{ url_for('static', filename='images/posters/stayhome.png') }}" height="85%">
     </main>
 </div>
 
