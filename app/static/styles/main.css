@@ -707,3 +707,8 @@ button {
 .profile__portfolio-grid {
     margin-top: 1rem
 }
+
+.education__button {
+    margin: 2rem auto;
+    width: 30%
+}

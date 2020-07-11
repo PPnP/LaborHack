@@ -1,9 +1,32 @@
 {% extends "base.html" %}
+{% set active_page = 'education' %}
 
 {% block head %}
-    <title>Образование</title>
+<title>Образование</title>
 {% endblock head %}
 
 {% block content %}
-    <h1>Здесь будет образование</h1>
+
+<div class="wrapper">
+    <aside class="sidebar">
+        {% include "blocks/profile.html" %}
+        {% include "blocks/menu.html" %}
+    </aside>
+
+    <main class="content content_single-col">
+        {% with back=True, search=True, search_fw=False %}
+        {% include "blocks/controls.html" %}
+        {% endwith %}
+
+        <img src="{{ url_for('static', filename='images/posters/education/1.png') }}">
+        <img src="{{ url_for('static', filename='images/posters/education/2.png') }}">
+        <img src="{{ url_for('static', filename='images/posters/education/3.png') }}">
+        <img src="{{ url_for('static', filename='images/posters/education/4.png') }}">
+
+        <button class="button education__button">
+            Начать обучение
+        </button>
+    </main>
+</div>
+
 {% endblock content %}
