@@ -1,9 +1,62 @@
 {% extends "base.html" %}
+{% set active_page = 'help' %}
 
 {% block head %}
-    <title>Помощь</title>
+<title>Помощь</title>
 {% endblock head %}
 
 {% block content %}
-    <h1>Здесь будет помощь</h1>
+
+<div class="wrapper">
+    <aside class="sidebar">
+        {% include "blocks/profile.html" %}
+        {% include "blocks/menu.html" %}
+    </aside>
+
+    <main class="content content_single-col">
+        {% with back=True, search=True, search_fw=False %}
+        {% include "blocks/controls.html" %}
+        {% endwith %}
+
+        <img src="{{ url_for('static', filename='images/posters/help/1.png') }}">
+
+        <h4 class="help__description">
+            Если с Вами плохо обошлись: не выплатили зарплату, лишили работы, незаконно вымогают деньги, лишают жилья,
+            то напишите нам и мы Вам поможем!
+        </h4>
+
+        <div class="get-help">
+
+            <div class="get-help__application">
+                <h2 class="get-help__title">Заявка</h2>
+                <form action="{{ action }}" method="POST" class="get-help__form">
+                    {{ form.hidden_tag() }}
+
+                    <div class="get-help__labels">
+                        <label class="get-help__label">Сообщение
+                            {{ form.comment(class="get-help__input") }}
+                        </label>
+
+                        <div class="get-help__label">
+                            {{ form.is_anonymous(class="custom-checkbox custom-checkbox_darker") }}
+                            <label for="is_anonymous" class="custom-checkbox__label">
+                                Отправить анонимно
+                            </label>
+                        </div>
+
+                        {{ form.submit(class="button get-help__button") }}
+                    </div>
+                </form>
+                <img src="{{ url_for('static', filename='images/posters/help/3.png') }}" class="get-help__man">
+
+            </div>
+
+            <img src="{{ url_for('static', filename='images/posters/help/2.png') }}">
+
+        </div>
+
+        <img src="{{ url_for('static', filename='images/posters/help/4.png') }}" class="help__we-will-help">
+    </main>
+</div>
+
 {% endblock content %}

@@ -115,11 +115,16 @@ input::-ms-input-placeholder {
 input,
 input::placeholder,
 select,
-button {
+button,
+textarea {
     font-family: 'Avenir', Arial, Helvetica, sans-serif;
     font-size: 1rem;
     outline: 0;
     -webkit-appearance: none;
+}
+
+textarea {
+    min-height: 10rem;
 }
 
 /* Generic */
@@ -355,7 +360,8 @@ button {
     display: none;
 }
 
-.add-event_visible {
+.add-event_visible,
+.get-help__application {
     border-radius: var(--border-radius-main);
     padding: 1.5rem;
     background: #fff;
@@ -369,27 +375,33 @@ button {
     grid-gap: 1.5rem;
 }
 
-.add-event__title {
+.add-event__title,
+.get-help__title {
     font-weight: 600;
     text-align: center;
 }
 
 .add-event__label,
-.add-event__labels {
+.add-event__labels,
+.get-help__label,
+.get-help__labels {
     display: -ms-grid;
     display: grid;
 }
 
-.add-event__label {
+.add-event__label,
+.get-help__label {
     font-weight: 600;
     grid-gap: .1rem
 }
 
-.add-event__labels {
+.add-event__labels,
+.get-help__labels {
     grid-gap: 1rem
 }
 
-.add-event__input {
+.add-event__input,
+.get-help__input {
     border: 0;
     background: #EDF1F6;
     padding: .5rem 1rem;
@@ -595,6 +607,10 @@ button {
     background-size: 50% 50%;
 }
 
+.custom-checkbox_darker+.custom-checkbox__label::before {
+    background-color: var(--secondary-accent);
+}
+
 .custom-checkbox+.custom-checkbox__label_invisible::before {
     content: none
 }
@@ -711,4 +727,37 @@ button {
 .education__button {
     margin: 2rem auto;
     width: 30%
+}
+
+.help__description {
+    font-weight: 600;
+    margin: 2rem auto
+}
+
+.get-help {
+    display: grid;
+    grid-template-columns: 60% auto;
+    grid-gap: 2rem;
+}
+
+.get-help__application {
+    position: relative;
+    overflow: visible;
+
+}
+
+.get-help__man {
+    width: 40%;
+    position: absolute;
+    right: 0;
+    bottom: -10%;
+}
+
+.get-help__button {
+    width: 30%;
+}
+
+.help__we-will-help {
+    width: 40%;
+    margin: 4rem auto 2rem
 }

@@ -1,0 +1,14 @@
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+{% set success = get_flashed_messages(category_filter=["success"]) %}
+
+{% if success %}
+<script>
+    Swal.fire({
+        title: 'Успех',
+        html: `{{ '<br>'.join(success)|safe }}`,
+        icon: 'success',
+        confirmButtonText: 'Закрыть'
+    })
+</script>
+{% endif %}

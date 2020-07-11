@@ -17,8 +17,12 @@
 
 <body class="{{ active_page }}">
     {% include "misc/preloader.html" %}
+
     {% block content %}{% endblock content %}
+
     <script src="{{ url_for('static', filename='scripts/preloader.js') }}"></script>
+
+    {% include "misc/flashes.html" %}
 </body>
 
 </html>
