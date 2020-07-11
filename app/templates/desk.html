@@ -1,9 +1,37 @@
 {% extends "base.html" %}
+{% set active_page = 'desk' %}
 
 {% block head %}
-    <title>Доска объявлений</title>
+<title>Доска объявлений</title>
 {% endblock head %}
 
 {% block content %}
-    <h1>Здесь будет доска объявлений</h1>
+
+<div class="wrapper">
+    <aside class="sidebar">
+        {% include "blocks/profile.html" %}
+        {% include "blocks/menu.html" %}
+    </aside>
+
+    <main class="content content_search">
+        <div class="content__sidebar">
+            <div class="content__filters">
+                {% include "blocks/controls.html" %}
+                {% include "blocks/language_selection.html" %}
+                {% include "blocks/district_selection.html" %}
+                {% include "blocks/service_selection.html" %}
+            </div>
+            <button class="button button_fw" id="find_button">
+                Найти
+            </button>
+        </div>
+
+        <div class="search-results">
+            {% include "search/people.html" %}
+        </div>
+    </main>
+</div>
+
+<script src="{{ url_for('static', filename='scripts/debounce.js') }}"></script>
+<script src="{{ url_for('static', filename='scripts/people/search.js') }}"></script>
 {% endblock content %}
