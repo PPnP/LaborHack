@@ -1,30 +1,36 @@
-const addButton = document.getElementById("add_event");
-const map = document.getElementById("map");
-const addBlock = document.querySelector(".add-event");
-const backButton = document.querySelector(".back-button");
+/**
+ * Responsible for showing/hiding "Add event" form on button click.
+ */
+
+const map = document.getElementById('map');
+
+const addBlock = document.querySelector('.add-event');
+const addButton = document.querySelector('.content__add-event');
+
+const backButton = document.querySelector('.back-button');
 
 const hideForm = () => {
-    // Возвращаем карту и кнопку добавления мероприятия
-    map.style.display = "block";
-    addButton.style.display = "block";
+    // Show map and "Add event" button
+    map.style.display = 'block';
+    addButton.style.display = 'block';
 
-    // Скрываем форму добавления мероприятия и кнопку назад
-    addBlock.classList.remove("add-event_visible");
-    backButton.classList.remove("back-button_on");
+    // Hide form and deactivate "Back" button
+    addBlock.classList.remove('add-event_visible');
+    backButton.classList.remove('back-button_on');
 };
 
 const showForm = () => {
-    // Скрываем карту и кнопку добавления мероприятия
-    map.style.display = "none";
-    addButton.style.display = "none";
+    // Hide map and "Add event" button
+    map.style.display = 'none';
+    addButton.style.display = 'none';
 
-    // Показываем форму добавления мероприятия и кнопку назад
-    addBlock.classList.add("add-event_visible");
-    backButton.classList.add("back-button_on");
+    // Show form and activate "Back" button
+    addBlock.classList.add('add-event_visible');
+    backButton.classList.add('back-button_on');
 
     activateButtons();
 
-    backButton.addEventListener("click", hideForm);
+    backButton.addEventListener('click', hideForm);
 };
 
-addButton.addEventListener("click", showForm);
+addButton.addEventListener('click', showForm);

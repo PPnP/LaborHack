@@ -1,29 +1,34 @@
-const input = document.querySelector(".search-input");
-const contents = document.querySelectorAll(".category");
+/**
+ * Responsible for searching for categories of events.
+ */
 
-// Выполняет поиск
+const input = document.querySelector('.search-input');
+const contents = document.querySelectorAll('.category');
+
+// Runs search and hides/shows matching profiles
 const search = debounceEvent(() => {
-    let query = input.value;
+    const query = input.value;
 
-    contents.forEach(category => {
-        // регистронезависимый поиск
-        let needleRegExp = new RegExp(query.trim(), "i");
-        let found = needleRegExp.test(category.innerText);
+    contents.forEach((category) => {
+        // Case-insensitive search among category card content
+        const needleRegExp = new RegExp(query.trim(), 'i');
+        const found = needleRegExp.test(category.innerText);
 
-        category.classList.toggle("category_invisible", !found);
+        category.classList.toggle('category_invisible', !found);
     });
-}, 300)
+}, 300);
 
-// Очищает строку поиска и показывает все результаты
+// Clears the search input and shows all results
 const cancelSearch = () => {
-    backButton.classList.remove("back-button_on");
-    input.value = "";
+    input.value = '';
+    backButton.classList.remove('back-button_on');
+
     search();
-}
+};
 
-backButton.addEventListener("click", cancelSearch);
+backButton.addEventListener('click', cancelSearch);
 
-input.addEventListener("keyup", () => {
-    backButton.classList.add("back-button_on");
+input.addEventListener('keyup', () => {
+    backButton.classList.add('back-button_on');
     search();
 });

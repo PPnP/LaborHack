@@ -1,7 +1,9 @@
-const preloader = document.querySelector(".preloader");
+/**
+ * Responsible for hiding the preloader after page loading.
+ */
 
-const hideLoader = () => {
-    preloader.classList.add("preloader_hidden");
-}
+const preloader = document.querySelector('.preloader');
 
-window.addEventListener("load", hideLoader);
+window.addEventListener('load', () => {
+    preloader.classList.add('preloader_hidden');
+});

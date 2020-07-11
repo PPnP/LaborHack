@@ -1,12 +1,8 @@
-const backButton = document.querySelector(".back-button");
+/**
+ * Responsible for the functionality of the "Back" button.
+ */
 
-const activateBackButton = () => {
-    backButton.classList.add("back-button_on");
-};
+const backButton = document.querySelector('.back-button');
 
-const goBack = () => {
-    window.history.back();
-};
-
-activateBackButton();
-backButton.addEventListener("click", goBack);
+backButton.classList.add('back-button_on');
+backButton.addEventListener('click', () => window.history.back());

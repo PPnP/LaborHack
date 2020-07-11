@@ -161,7 +161,24 @@ textarea {
     grid-auto-rows: 100%;
 }
 
-/* Locations */
+.search-input {
+    border-radius: var(--border-radius-secondary);
+    border: 0;
+    color: var(--main-dark);
+    padding: .5rem 1rem;
+    background: url(../images/icons/magnifier.svg) var(--secondary-accent) no-repeat scroll .75rem 50%;
+    text-indent: 1.75rem;
+}
+
+.search-input_light {
+    background: url(../images/icons/magnifier.svg) #fff no-repeat scroll .75rem 50%;
+}
+
+.search-input_fw {
+    width: 100%;
+}
+
+/* Sidebar */
 
 .sidebar {
     display: -ms-grid;
@@ -260,22 +277,7 @@ textarea {
     filter: invert(16%) sepia(18%) saturate(1354%) hue-rotate(196deg) brightness(94%) contrast(94%);
 }
 
-.search-input {
-    border-radius: var(--border-radius-secondary);
-    border: 0;
-    color: var(--main-dark);
-    padding: .5rem 1rem;
-    background: url(../images/icons/magnifier.svg) var(--secondary-accent) no-repeat scroll .75rem 50%;
-    text-indent: 1.75rem;
-}
-
-.search-input_light {
-    background: url(../images/icons/magnifier.svg) #fff no-repeat scroll .75rem 50%;
-}
-
-.search-input_fw {
-    width: 100%;
-}
+/* Content area */
 
 .content {
     background: var(--secondary-accent);
@@ -291,14 +293,16 @@ textarea {
 }
 
 .content_single-col {
+    -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
     grid-gap: 2rem;
+    grid-auto-rows: minmax(-webkit-min-content, -webkit-max-content);
     grid-auto-rows: minmax(min-content, max-content);
 }
 
-.content_search {
-    -ms-grid-columns: 35% auto;
-    grid-template-columns: 35% auto;
+.content__title {
+    font-weight: 600;
+    margin-bottom: 1rem
 }
 
 .content__sidebar {
@@ -323,6 +327,61 @@ textarea {
     overflow: auto;
     margin-top: 1rem
 }
+
+.content__filters {
+    display: -ms-grid;
+    display: grid;
+    grid-gap: 1rem;
+}
+
+.controls {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.back-button {
+    border-radius: 100%;
+    width: 3rem;
+    height: 3rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-right: 1rem;
+    -webkit-filter: grayscale(1) opacity(.5);
+    filter: grayscale(1) opacity(.5);
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    pointer-events: none;
+}
+
+.back-button_on {
+    -webkit-filter: none;
+    filter: none;
+    pointer-events: all;
+}
+
+.back-button::before {
+    content: "";
+    background: url(../images/icons/arrow.svg) no-repeat;
+    display: block;
+    -webkit-filter: invert(1);
+    filter: invert(1);
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+    height: 2rem;
+    width: 2rem;
+    margin-top: -1rem;
+}
+
+/* Locations */
 
 .content__add-event {
     margin-top: 1rem
@@ -422,64 +481,11 @@ textarea {
     flex-direction: column;
 }
 
-.controls {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-}
-
-.back-button {
-    border-radius: 100%;
-    width: 3rem;
-    height: 3rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    margin-right: 1rem;
-    -webkit-filter: grayscale(1) opacity(.5);
-    filter: grayscale(1) opacity(.5);
-    -ms-flex-negative: 0;
-    flex-shrink: 0;
-    pointer-events: none;
-}
-
-.back-button_on {
-    -webkit-filter: none;
-    filter: none;
-    pointer-events: all;
-}
-
-.back-button::before {
-    content: "";
-    background: url(../images/icons/arrow.svg) no-repeat;
-    display: block;
-    -webkit-filter: invert(1);
-    filter: invert(1);
-    -webkit-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-    transform: rotate(180deg);
-    height: 2rem;
-    width: 2rem;
-    margin-top: -1rem;
-}
-
-.content__title {
-    font-weight: 600;
-    margin-bottom: 1rem
-}
-
 /* People */
 
-.content__filters {
-    display: -ms-grid;
-    display: grid;
-    grid-gap: 1rem;
+.search__content {
+    -ms-grid-columns: 35% auto;
+    grid-template-columns: 35% auto;
 }
 
 .search-results {
@@ -572,14 +578,12 @@ textarea {
     display: block;
 }
 
-/* для элемента input c type="checkbox" */
 .custom-checkbox {
     position: absolute;
     z-index: -1;
     opacity: 0;
 }
 
-/* для элемента label, связанного с .custom-checkbox */
 .custom-checkbox+.custom-checkbox__label {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
@@ -594,7 +598,6 @@ textarea {
     cursor: pointer;
 }
 
-/* создание в label псевдоэлемента before со следующими стилями */
 .custom-checkbox+.custom-checkbox__label::before {
     content: '';
     display: inline-block;
@@ -621,34 +624,32 @@ textarea {
     content: none
 }
 
-/* стили при наведении курсора на checkbox */
 .custom-checkbox:not(:disabled):not(:checked)+.custom-checkbox__label:hover::before {
-    border-color: #b3d7ff;
+    border-color: var(--secondary-accent);
 }
 
-/* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
 .custom-checkbox:focus:not(:checked)+.custom-checkbox__label::before {
-    border-color: #80bdff;
+    border-color: var(--main-accent);
 }
 
-/* стили для чекбокса, находящегося в состоянии checked */
 .custom-checkbox:checked+.custom-checkbox__label::before {
     background-image: url(../images/icons/tick.svg);
 }
 
-/* стили для чекбокса, находящегося в состоянии disabled */
-.custom-checkbox:disabled+.custom-checkbox__label::before {
-    background-color: #e9ecef;
-}
+/* Profile page */
 
 .profile {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 70% 2rem auto;
     grid-template-columns: 70% auto;
     grid-gap: 2rem;
 }
 
 .profile__person-info {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 2rem 1fr;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 2rem;
 }
@@ -657,11 +658,14 @@ textarea {
     width: 100%;
     height: 100%;
     border-radius: var(--border-radius-main);
+    -o-object-fit: cover;
     object-fit: cover;
 }
 
 .profile__bio {
+    display: -ms-grid;
     display: grid;
+    grid-auto-rows: minmax(-webkit-min-content, -webkit-max-content);
     grid-auto-rows: minmax(min-content, max-content);
     grid-gap: 1rem
 }
@@ -671,7 +675,10 @@ textarea {
 }
 
 .profile__social {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap
 }
 
@@ -680,6 +687,7 @@ textarea {
 }
 
 .achievement {
+    display: -ms-grid;
     display: grid;
     grid-gap: 1rem;
     text-align: center;
@@ -694,7 +702,9 @@ textarea {
 }
 
 .portfolio-grid {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 1rem 1fr 1rem 1fr;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1rem;
 }
@@ -710,6 +720,7 @@ textarea {
 .portfolio-item__image {
     height: 100%;
     width: 100%;
+    -o-object-fit: cover;
     object-fit: cover;
 }
 
@@ -730,10 +741,14 @@ textarea {
     margin-top: 1rem
 }
 
+/* Education page */
+
 .education__button {
     margin: 2rem auto;
     width: 30%
 }
+
+/* Help page */
 
 .help__description {
     font-weight: 600;
@@ -741,7 +756,9 @@ textarea {
 }
 
 .get-help {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 60% 2rem auto;
     grid-template-columns: 60% auto;
     grid-gap: 2rem;
 }
@@ -749,7 +766,6 @@ textarea {
 .get-help__application {
     position: relative;
     overflow: visible;
-
 }
 
 .get-help__man {
@@ -768,13 +784,17 @@ textarea {
     margin: 4rem auto 2rem
 }
 
+/* Media queries */
+
 @media screen and (max-width: 1000px) {
 
     .wrapper,
     .content,
     .search-results,
     .get-help {
+        -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
+        grid-auto-rows: minmax(-webkit-min-content, -webkit-max-content);
         grid-auto-rows: minmax(min-content, max-content);
     }
 
@@ -783,6 +803,8 @@ textarea {
         position: static;
         left: 0;
         top: 0;
+        -webkit-transform: none;
+        -ms-transform: none;
         transform: none;
         height: auto;
         margin: 2rem auto;
@@ -790,6 +812,8 @@ textarea {
 
     .content__map {
         height: 30rem;
+        -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
         order: -1
     }
 
