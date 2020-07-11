@@ -808,6 +808,10 @@ textarea {
     color: #fff;
 }
 
+.portfolio-item__title {
+    font-weight: 600;
+}
+
 .profile__portfolio {
     margin-bottom: 2rem
 }
