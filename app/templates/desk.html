@@ -16,10 +16,13 @@
     <main class="content content_search">
         <div class="content__sidebar">
             <div class="content__filters">
+                {% with back=True, search=True %}
                 {% include "blocks/controls.html" %}
-                {% include "blocks/language_selection.html" %}
-                {% include "blocks/district_selection.html" %}
-                {% include "blocks/service_selection.html" %}
+                {% endwith %}
+
+                {% include "blocks/selection/language_selection.html" %}
+                {% include "blocks/selection/district_selection.html" %}
+                {% include "blocks/selection/service_selection.html" %}
             </div>
             <button class="button button_fw" id="find_button">
                 Найти

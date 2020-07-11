@@ -285,6 +285,12 @@ button {
     overflow: auto;
 }
 
+.content_single-col {
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+    grid-auto-rows: minmax(min-content, max-content);
+}
+
 .content_search {
     -ms-grid-columns: 35% auto;
     grid-template-columns: 35% auto;
@@ -611,4 +617,93 @@ button {
 /* стили для чекбокса, находящегося в состоянии disabled */
 .custom-checkbox:disabled+.custom-checkbox__label::before {
     background-color: #e9ecef;
+}
+
+.profile {
+    display: grid;
+    grid-template-columns: 70% auto;
+    grid-gap: 2rem;
+}
+
+.profile__person-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+}
+
+.profile__avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius-main);
+    object-fit: cover;
+}
+
+.profile__bio {
+    display: grid;
+    grid-auto-rows: minmax(min-content, max-content);
+    grid-gap: 1rem
+}
+
+.profile__name {
+    font-weight: 600;
+}
+
+.profile__social {
+    display: flex;
+    flex-wrap: wrap
+}
+
+.profile__social>*:not(:first-child) {
+    margin-left: 1rem
+}
+
+.achievement {
+    display: grid;
+    grid-gap: 1rem;
+    text-align: center;
+}
+
+.achievement__image {
+    margin: auto
+}
+
+.achievement__title {
+    font-weight: 600;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+}
+
+.portfolio-item {
+    overflow: hidden;
+    position: relative;
+    border-radius: var(--border-radius-secondary);
+    height: 100%;
+    width: 100%;
+}
+
+.portfolio-item__image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.portfolio-item__info {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    margin: 2rem 1rem 1rem;
+    bottom: 0;
+    color: #fff;
+}
+
+.profile__portfolio {
+    margin-bottom: 2rem
+}
+
+.profile__portfolio-grid {
+    margin-top: 1rem
 }

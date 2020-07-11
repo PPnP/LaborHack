@@ -1,4 +1,9 @@
 <header class="controls">
+    {% if back %}
     <button class="button back-button"></button>
+    {% endif %}
+
+    {% if search %}
     <input type="text" class="search-input search-input_fw search-input_light" placeholder="Поиск" />
+    {% endif %}
 </header>
