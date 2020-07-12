@@ -1,0 +1,11 @@
+<a class="ad-card" data-district="{{ location }}" data-language="{{ language }}" data-type="{{ type }}">
+    <img class="ad-card__photo" src="{{ url_for('static', filename=image) }}">
+    <div class="ad-card__info">
+        <h4 class="ad-card__title">{{ title }}</h4>
+        <p class="ad-card__extra">{{ description }}</p>
+
+        {% if price %}
+        <p class="ad-card__extra">{{ price }} руб.</p>
+        {% endif %}
+    </div>
+</a>

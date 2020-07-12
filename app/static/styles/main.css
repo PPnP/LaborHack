@@ -528,6 +528,10 @@ textarea {
     overflow: auto
 }
 
+.search-results_two-col {
+    grid-template-columns: repeat(2, 1fr);
+}
+
 .person-card {
     text-decoration: none;
     color: var(--main-dark);
@@ -822,6 +826,40 @@ textarea {
 .help__we-will-help {
     width: 40%;
     margin: 4rem auto 2rem
+}
+
+.ad-card {
+    text-decoration: none;
+    color: var(--main-dark);
+    -webkit-transition: -webkit-transform var(--transition-duration) linear;
+    -o-transition: transform var(--transition-duration) linear;
+    transition: transform var(--transition-duration) linear;
+    transition: transform var(--transition-duration) linear, -webkit-transform var(--transition-duration) linear
+}
+
+.ad-card_invisible {
+    display: none
+}
+
+.ad-card__photo {
+    vertical-align: bottom;
+    border-radius: var(--border-radius-secondary);
+    width: 100%
+}
+
+.ad-card__title {
+    font-weight: 600;
+    margin-bottom: .25rem
+}
+
+.ad-card__info {
+    padding: 1rem;
+    padding-top: calc(1rem + 5%);
+    margin-top: -5%;
+    background: #fff;
+    border-radius: var(--border-radius-secondary);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0
 }
 
 @media screen and (max-width:1000px) {
