@@ -1,8 +1,8 @@
 {% extends "base.html" %}
-{% set active_page = 'stayhome' %}
+{% set active_page = 'notifications' %}
 
 {% block head %}
-<title>Оставайтесь дома</title>
+<title>Уведомления</title>
 {% endblock head %}
 
 {% block content %}
@@ -21,7 +21,5 @@
         <img src="{{ url_for('static', filename='images/posters/stayhome.png') }}" height="85%">
     </main>
 </div>
-
-<script src="{{ url_for('static', filename='scripts/stayhome/redirect.js') }}"></script>
 
 {% endblock content %}

@@ -25,8 +25,8 @@ api.add_url_rule('/education', view_func=EducationController.as_view('Education'
 from app.api.controllers.help import HelpController
 api.add_url_rule('/help', view_func=HelpController.as_view('Help'))
 
-from app.api.controllers.stayhome import StayHomeController
-api.add_url_rule('/stayhome', view_func=StayHomeController.as_view('StayHome'))
+from app.api.controllers.notifications import NotificationsController
+api.add_url_rule('/notifications', view_func=NotificationsController.as_view('Notifications'))
 
 from app.api.controllers.data import DataController
 api.add_url_rule('/data/<string:type>', view_func=DataController.as_view('Data'))

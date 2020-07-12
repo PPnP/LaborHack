@@ -4,4 +4,4 @@ from flask.views import MethodView
 
 class IndexController(MethodView):
     def get(self):
-        return redirect(url_for('api.StayHome'))
+        return redirect(url_for('api.Locations'))
