@@ -1,6 +1,6 @@
 # ТрудHack.Генерация
 
-> PPnP Team
+> ![​PPnP Team](PPnP_logo.png)
 >
 > [![](https://img.shields.io/badge/PM%26BA-Pavel%20Krylov-lightgrey)](https://vk.com/pkryloff 'VK profile')
 > [![](https://img.shields.io/badge/UX%2FUI-Leonid%20Kravtsov-green)](https://vk.com/kravtsovjr 'VK profile')
