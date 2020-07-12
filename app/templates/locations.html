@@ -30,7 +30,11 @@
 
         {% include "locations/add_event.html" %}
 
-        <div class="content__map" id="map"></div>
+        <div class="content__map" id="map">
+            {% with title="Баскетбол 18:00", image="https://tramplinsport.ru/uploads/images/basketbolnaja-ploschadka-4201.jpg", description="Рейтинг 5/5", address='Район Дыбенко' %}
+            {% include "blocks/event.html" %}
+            {% endwith %}
+        </div>
     </main>
 </div>
 

@@ -438,7 +438,8 @@ textarea {
 
 .content__map {
     border-radius: var(--border-radius-main);
-    overflow: hidden
+    overflow: hidden;
+    position: relative;
 }
 
 .add-event {
@@ -862,6 +863,30 @@ textarea {
     border-top-right-radius: 0
 }
 
+.event {
+    position: absolute;
+    z-index: 1;
+    width: 40%;
+    background: #fff;
+    padding: 1rem;
+    border-radius: var(--border-radius-secondary);
+    box-shadow: 12px 4px 12px rgba(0, 0, 0, 0.25);
+    left: 40%;
+    top: 20%;
+}
+
+.event__image {
+    width: 100%;
+    height: 90px;
+    object-fit: cover;
+    border-radius: var(--border-radius-secondary);
+}
+
+.event__title {
+    font-weight: 600;
+    margin: 1rem auto
+}
+
 @media screen and (max-width:1000px) {
 
     .content,
@@ -890,7 +915,7 @@ textarea {
         height: 30rem;
         -webkit-box-ordinal-group: 0;
         -ms-flex-order: -1;
-        order: -1
+        order: -1;
     }
 
     .education__button {
