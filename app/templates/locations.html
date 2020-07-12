@@ -44,4 +44,20 @@
 <script src="{{ url_for('static', filename='scripts/locations/add.js') }}"></script>
 <script src="{{ url_for('static', filename='scripts/debounce.js') }}"></script>
 <script src="{{ url_for('static', filename='scripts/locations/search.js') }}"></script>
+
+<!-- For demo purposes -->
+<script>
+    const balloon = document.querySelector('.event');
+    const leisureButton = document.querySelector('.category[data-slug=leisure]');
+
+    balloon.style.display = 'none';
+
+    balloon.addEventListener('click', () => {
+        balloon.style.display = 'none';
+    });
+
+    leisureButton.addEventListener('click', () => {
+        balloon.style.display = 'block';
+    });;
+</script>
 {% endblock content %}
