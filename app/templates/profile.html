@@ -26,11 +26,7 @@
         <div class="profile__portfolio">
             <h2>Портфолио</h2>
             <div class="portfolio-grid profile__portfolio-grid">
-                {% for i in range(5) %}
-                {% with image=url_for('static', filename='images/portfolio/1.png'), title='Отделка гостиной', date="25.02.2020" %}
-                {% include "blocks/portfolio_item.html" %}
-                {% endwith %}
-                {% endfor %}
+                {% include "profile/portfolios.html" %}
             </div>
         </div>
     </main>

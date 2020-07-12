@@ -1,0 +1,11 @@
+{% with image=url_for('static', filename='images/portfolio/1.png'), title='Отделка гостиной', date="25.05.2020" %}
+{% include "blocks/portfolio_item.html" %}
+{% endwith %}
+
+{% with image=url_for('static', filename='images/portfolio/2.png'), title='Отделка ванной', date="12.01.2020" %}
+{% include "blocks/portfolio_item.html" %}
+{% endwith %}
+
+{% with image=url_for('static', filename='images/portfolio/3.png'), title='Отделка бани', date="24.03.2020" %}
+{% include "blocks/portfolio_item.html" %}
+{% endwith %}
